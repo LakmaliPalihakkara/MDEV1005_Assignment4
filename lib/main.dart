@@ -61,7 +61,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
         controller: _tabController,
         children:[
           Center(
-            child: Text("Hello") ,
+            child: Text("Hello, welcome") ,
           ),
           Center(
             child: WeatherDisplay(),
