@@ -15,8 +15,10 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-use the following command to run the app:
-
-flutter run --no-sound-null-safety
-
 API used to get weather information is from [OpenWeather](https://home.openweathermap.org/api_keys).
+
+In case of any difficulties while running the application use below command to run the app: 
+
+`flutter run --no-sound-null-safety`
+
+
