@@ -1,30 +1,123 @@
-import 'package:assignment4/data_service.dart';
 import 'package:assignment4/weather_display.dart';
 import 'package:flutter/material.dart';
 
-import 'models.dart';
-
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => _MyAppState();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-class _MyAppState extends State<MyApp> {
-
+  static const String _title = 'Calculator and Weather App';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          body: Center(
-            child: WeatherDisplay(),
-          ),
-        ));
+    return const MaterialApp(
+      title: _title,
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+/// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
+class _MyStatefulWidgetState extends State<MyStatefulWidget>
+    with TickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Calculator and Weather App'),
+        bottom: TabBar(
+          controller: _tabController,
+          tabs: const <Widget>[
+            Tab(
+              text: 'Greetings',
+            ),
+            Tab(
+              text: 'Weather',
+            ),
+            Tab(
+              text: 'Calculator',
+            ),
+          ],
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children:[
+          Center(
+            child: Text("Hello") ,
+          ),
+          Center(
+            child: WeatherDisplay(),
+          ),
+          Center(
+            child: Text("Calculator"),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
 }
