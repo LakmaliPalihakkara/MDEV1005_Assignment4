@@ -18,3 +18,5 @@ samples, guidance on mobile development, and a full API reference.
 use the following command to run the app:
 
 flutter run --no-sound-null-safety
+
+API used to get weather information is from [OpenWeather](https://home.openweathermap.org/api_keys).
