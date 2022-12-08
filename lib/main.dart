@@ -1,6 +1,8 @@
+import 'package:assignment4/Calculator.dart';
 import 'package:assignment4/weather_display.dart';
 import 'package:flutter/material.dart';
 
+// @dart=2.9
 void main() {
   runApp(const MyApp());
 }
@@ -67,7 +69,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
             child: WeatherDisplay(),
           ),
           Center(
-            child: Text("Calculator"),
+            child: Calculator()
           ),
         ],
       ),
