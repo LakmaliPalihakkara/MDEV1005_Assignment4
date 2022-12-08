@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'CalButton.dart';
- import '../helpers/Divider.dart';
+ import '../../Cal/Divider.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({Key? key}) : super(key: key);
@@ -11,13 +11,13 @@ class Calculator extends StatefulWidget {
 }
 
 class _Home extends State<Calculator> {
-  var userQuestion = '';
-  var userAnswer = '';
+  var numbers = ''; // Get enter numbers
+  var result = ''; // Get result
   final List<String> button = [
     'C',
     '(',
     ')',
-    '⌫',
+    'x',
     '7',
     '8',
     '9',
@@ -40,23 +40,23 @@ class _Home extends State<Calculator> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff171C22),
+        backgroundColor: Color(0xffffffff),
         body: Column(
           children: [
             Expanded(
 
               child: Column(
                 children: [
-                  SizedBox(height: 50.0,),
+                  SizedBox(height: 20.0,),
                   Container(
                     alignment: Alignment.centerRight,
                     padding: EdgeInsets.all(20),
                     child: Text(
-                      userQuestion,
+                      numbers, // Set numbers to text
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 40.0,
-                        color: Colors.white70,
+                        color: Color(0xff2E3A48),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -65,11 +65,11 @@ class _Home extends State<Calculator> {
                     alignment: Alignment.centerRight,
                     padding: EdgeInsets.all(20),
                     child: Text(
-                      userAnswer,
+                      result, // Set result to text
                       textAlign: TextAlign.right,
                       style: TextStyle(
                         fontSize: 40.0,
-                        color: Colors.white,
+                        color: Color(0xff2E3A48),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -78,7 +78,7 @@ class _Home extends State<Calculator> {
               ),
             ),
 
-           const GradientDivider(),
+           const Line(), //Set divider
             Expanded(
               flex: 2,
               child: GridView.builder(
@@ -91,8 +91,8 @@ class _Home extends State<Calculator> {
                         btnText: button[index],
                         buttonTapped: () {
                           setState(() {
-                            userQuestion = '';
-                            userAnswer = '';
+                            numbers = '';
+                            result = '';
                           });
                         },
                         color: Color(0xff2E3A48));
@@ -111,8 +111,8 @@ class _Home extends State<Calculator> {
                         btnText: button[index],
                         buttonTapped: () {
                           setState(() {
-                            userQuestion = userQuestion.substring(
-                                0, userQuestion.length - 1);
+                            numbers = numbers.substring(
+                                0, numbers.length - 1);//Get one number at a time
                           });
                         },
                         color: Color(0xff2E3A48));
@@ -121,7 +121,7 @@ class _Home extends State<Calculator> {
                         btnText: button[index],
                         buttonTapped: () {
                           setState(() {
-                            userQuestion += button[index];
+                            numbers += button[index];
                           });
                         },
                         color: Color(0xff2E3A48));
@@ -130,11 +130,11 @@ class _Home extends State<Calculator> {
                       btnText: button[index],
                       buttonTapped: () {
                         setState(() {
-                          userQuestion += button[index];
+                          numbers += button[index]; //Entered numbers store in numbers varible
                         });
                       },
-                      color: isOperator(button[index])
-                          ? Color(0xff6344D4)
+                      color: isOperator(button[index]) // If buttons are operators, set blue background. If not set black background to numbers
+                          ? Color(0xff3bacdc)
                           : Color(0xff171C22),
                     );
                   }
@@ -147,6 +147,7 @@ class _Home extends State<Calculator> {
     );
   }
 
+  // Return the result according to operator
   bool isOperator(String x) {
     if (x == '-' || x == '+' || x == '*' || x == '/') {
       return true;
@@ -154,14 +155,16 @@ class _Home extends State<Calculator> {
       return false;
     }
   }
+
+  // Get the final result after the calculation
   void equalPressed() {
-    String finalQuestion = userQuestion;
+    String finalNumbers = numbers;
     try{
       Parser p = Parser();
-      Expression exp = p.parse(finalQuestion);
-      ContextModel cm = ContextModel();
-      double eval = exp.evaluate(EvaluationType.REAL, cm);
-      userAnswer = eval.toString();
+      Expression exp = p.parse(finalNumbers);
+      ContextModel contextModel = ContextModel();
+      double eval = exp.evaluate(EvaluationType.REAL, contextModel);
+      result = eval.toString();
     }catch(e){
       print(e);
     }

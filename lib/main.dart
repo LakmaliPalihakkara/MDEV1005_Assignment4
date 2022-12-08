@@ -1,4 +1,4 @@
-import 'package:assignment4/Calculator.dart';
+import 'package:assignment4/Cal/Calculator.dart';
 import 'package:assignment4/weather_display.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const String _title = 'Calculator and Weather App';
+  static const String _title = 'Cal and Weather App';
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Calculator and Weather App'),
+        title: const Text('Cal and Weather App'),
         bottom: TabBar(
           controller: _tabController,
           tabs: const <Widget>[

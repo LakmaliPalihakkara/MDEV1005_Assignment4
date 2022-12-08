@@ -14,18 +14,17 @@ class CalButton extends StatelessWidget {
     return GestureDetector(
         onTap: buttonTapped,
         child: Padding(
-
           padding: EdgeInsets.all(8.0),
           child:  ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
             child: Container(
-              color: color,
+              color: color, //Background color
               child: Center(
                 child: Text(
                   btnText,
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
+                      color: Colors.white, //Font color
+                      fontSize: 20, //Font size
                       fontWeight: FontWeight.bold
                   ),
                 ),
