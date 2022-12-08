@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
-import 'CalButton.dart';
- import '../../Cal/Divider.dart';
+import 'cal_button.dart';
+ import '../../Cal/divider.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({Key? key}) : super(key: key);

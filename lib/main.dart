@@ -1,4 +1,4 @@
-import 'package:assignment4/Cal/Calculator.dart';
+import 'package:assignment4/Cal/calculator.dart';
 import 'package:assignment4/weather_display.dart';
 import 'package:flutter/material.dart';
 
