@@ -22,7 +22,7 @@ class _Greetings extends State<Greetings> {
                     style: TextStyle(
                         fontSize: 35,
                         color: Color(0xff213b5b),
-                        fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w600), // Set text
 
                 )),
 
@@ -33,7 +33,7 @@ class _Greetings extends State<Greetings> {
                   style: TextStyle(
                       fontSize: 26,
                       color: Colors.blue,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w600),  // Set text
 
                 )),
 
@@ -45,9 +45,7 @@ class _Greetings extends State<Greetings> {
                 ),
               width: 300,
               height: 300,
-            ),
-
-
+            ),  // Set image
           ],
         ),
       ],
