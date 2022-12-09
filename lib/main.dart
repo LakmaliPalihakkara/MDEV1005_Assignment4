@@ -44,7 +44,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cal and Weather App'),
+        title: const Text('My Tools Buddy'),
         bottom: TabBar(
           controller: _tabController,
           tabs: const <Widget>[

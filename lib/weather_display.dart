@@ -22,12 +22,12 @@ final _cityTextController = TextEditingController();
         Column(
           children: [
             Padding(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(10),
                 child: Text('Weather API',
-                    style: TextStyle(fontSize: 30,color: Colors.blue)
+                    style: TextStyle(fontSize: 30,color: Colors.blue),
                 )),
             Padding(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(10),
                 child:
                 Text('Please search with city name below to get the temperature details:',
                     style: TextStyle(color: Colors.blue),
@@ -42,12 +42,14 @@ final _cityTextController = TextEditingController();
               Image.network(_response!.iconUrl),
               Text(
                 '${_response!.tempInfo.temperature}° F',
-                style: TextStyle(fontSize: 40),
+                style: TextStyle(fontSize: 30),
               ),
-              Text(_response!.weatherInfo.description),
+              Text(_response!.weatherInfo.description,
+                style: TextStyle(fontSize: 13)),
 
               Text(
                 'Feels like ${_response!.tempInfo.feelsLikeTemp}° F',
+    style: TextStyle(fontSize: 13)
               )
 
             ],
@@ -57,12 +59,12 @@ final _cityTextController = TextEditingController();
           Column(
             children: [
               Text('--',
-                style: TextStyle(fontSize: 30),)
+                style: TextStyle(fontSize: 40),)
             ],
           ),
 
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 50),
+          padding: EdgeInsets.symmetric(vertical: 20),
           child: SizedBox(
             width: 150,
             child: TextField(
