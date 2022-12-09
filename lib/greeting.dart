@@ -18,11 +18,22 @@ class _Greetings extends State<Greetings> {
             Padding(
                 padding: EdgeInsets.all(20),
 
-                child: Text('Welcome!',
+                child: Text('Welcome',
                     style: TextStyle(
                         fontSize: 35,
                         color: Color(0xff213b5b),
                         fontWeight: FontWeight.w600), // Set text
+
+                )),
+
+            Padding(
+                padding: EdgeInsets.all(5),
+
+                child: Text('to',
+                  style: TextStyle(
+                      fontSize: 26,
+                      color: Color(0xff496d9b),
+                      fontWeight: FontWeight.w600), // Set text
 
                 )),
 
