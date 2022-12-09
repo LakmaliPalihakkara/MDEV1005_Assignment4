@@ -134,7 +134,7 @@ class _Home extends State<Calculator> {
                         });
                       },
                       color: isOperator(button[index]) // If buttons are operators, set blue background. If not set black background to numbers
-                          ? Color(0xff3bacdc)
+                          ?  Colors.blue
                           : Color(0xff171C22),
                     );
                   }

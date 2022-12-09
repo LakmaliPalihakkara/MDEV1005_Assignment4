@@ -13,9 +13,11 @@ class Line extends StatelessWidget {
         begin: Alignment.bottomLeft,
         end: Alignment.topRight,
         colors: [
-          Color(0xffadddf3),
+          Colors.blue,
           Color(0xff7dd1f5),
-          Color(0xff3bacdc),
+          Color(0xffadddf3)
+
+
         ],
       ) ),
     );

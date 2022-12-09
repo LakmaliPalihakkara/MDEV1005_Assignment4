@@ -1,4 +1,5 @@
 import 'package:assignment4/Cal/calculator.dart';
+import 'package:assignment4/greeting.dart';
 import 'package:assignment4/weather_display.dart';
 import 'package:flutter/material.dart';
 
@@ -63,7 +64,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget>
         controller: _tabController,
         children:[
           Center(
-            child: Text("Hello, welcome!!") ,
+            child: Greetings(),
           ),
           Center(
             child: WeatherDisplay(),
