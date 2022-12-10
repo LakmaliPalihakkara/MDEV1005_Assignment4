@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+import '../main.dart';
 import 'cal_button.dart';
  import '../../Cal/divider.dart';
 
@@ -38,7 +39,10 @@ class _Home extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Scaffold(
+        appBar: AppBar(title: Text('Calculator')),
+        body: Center(
+        child: SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffffffff),
         body: Column(
@@ -144,7 +148,8 @@ class _Home extends State<Calculator> {
            ],
         ),
       ),
-    );
+    )
+    ));
   }
 
   // Return the result according to operator

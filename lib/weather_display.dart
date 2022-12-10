@@ -1,6 +1,5 @@
 import 'package:assignment4/data_service.dart';
 import 'package:flutter/material.dart';
-
 import 'models.dart';
 
 class WeatherDisplay extends StatefulWidget
@@ -10,13 +9,16 @@ class WeatherDisplay extends StatefulWidget
 }
 class _WeatherDisplay extends State<WeatherDisplay> {
 
-final _cityTextController = TextEditingController();
+  final _cityTextController = TextEditingController();
   final _dataService = DataService();
 
   WeatherResponse? _response;
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+      appBar: AppBar(title: Text('Weather API')),
+      body: Center(
+      child:  Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
@@ -44,10 +46,13 @@ final _cityTextController = TextEditingController();
                 '${_response!.tempInfo.temperature}° F',
                 style: TextStyle(fontSize: 40),
               ),
-              Text(_response!.weatherInfo.description),
+              Text(_response!.weatherInfo.description,
+    style: TextStyle(fontSize: 12)),
+
 
               Text(
                 'Feels like ${_response!.tempInfo.feelsLikeTemp}° F',
+                  style: TextStyle(fontSize: 12)
               )
 
             ],
@@ -62,7 +67,7 @@ final _cityTextController = TextEditingController();
           ),
 
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 50),
+          padding: EdgeInsets.symmetric(vertical: 25),
           child: SizedBox(
             width: 150,
             child: TextField(
@@ -73,7 +78,8 @@ final _cityTextController = TextEditingController();
         ),
         ElevatedButton(onPressed: _search, child: Text('Search'))
       ],
-    );
+    )
+      ) );
   }
 
   void _search() async {

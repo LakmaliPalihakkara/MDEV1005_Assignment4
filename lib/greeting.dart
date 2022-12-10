@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 class Greetings extends StatefulWidget
 {
   @override
@@ -7,10 +9,12 @@ class Greetings extends StatefulWidget
 }
 class _Greetings extends State<Greetings> {
 
-
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+      appBar: AppBar(title: Text('Greetings')),
+      body: Center(
+      child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
@@ -60,6 +64,7 @@ class _Greetings extends State<Greetings> {
           ],
         ),
       ],
-    );
+    )
+    ));
   }
 }
