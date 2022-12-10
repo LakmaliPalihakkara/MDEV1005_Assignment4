@@ -2,6 +2,7 @@ import 'package:assignment4/data_service.dart';
 import 'package:flutter/material.dart';
 import 'models.dart';
 
+//Class to display weather details in Weather API screen
 class WeatherDisplay extends StatefulWidget
 {
   @override
@@ -81,7 +82,7 @@ class _WeatherDisplay extends State<WeatherDisplay> {
     )
       ) );
   }
-
+// Passes the city name and gets back the weather details as response
   void _search() async {
     final response = await _dataService.getWeather(_cityTextController.text);
     setState(() => _response = response);

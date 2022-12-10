@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:assignment4/models.dart';
 import 'package:http/http.dart' as http;
 
+//Class to make API call and get weather response.
 class DataService {
   Future<WeatherResponse> getWeather(String city) async {
 
