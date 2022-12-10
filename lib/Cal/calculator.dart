@@ -105,7 +105,7 @@ class _Home extends State<Calculator> {
                         btnText: button[index],
                         buttonTapped: () {
                           setState(() {
-                            equalPressed();
+                            equalPressed(); // Get the final result after click on = button
                           });
                         },
                         color: Color(0xff171C22));
