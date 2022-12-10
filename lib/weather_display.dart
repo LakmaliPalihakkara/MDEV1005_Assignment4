@@ -25,7 +25,7 @@ class _WeatherDisplay extends State<WeatherDisplay> {
         Column(
           children: [
             Padding(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(10),
                 child: Text('Weather API',
                     style: TextStyle(fontSize: 30,color: Colors.blue)
                 )),
@@ -45,7 +45,7 @@ class _WeatherDisplay extends State<WeatherDisplay> {
               Image.network(_response!.iconUrl),
               Text(
                 '${_response!.tempInfo.temperature}° F',
-                style: TextStyle(fontSize: 40),
+                style: TextStyle(fontSize: 30),
               ),
               Text(_response!.weatherInfo.description,
     style: TextStyle(fontSize: 12)),
@@ -68,7 +68,7 @@ class _WeatherDisplay extends State<WeatherDisplay> {
           ),
 
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 10),
           child: SizedBox(
             width: 150,
             child: TextField(
