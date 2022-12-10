@@ -68,7 +68,7 @@ class _WeatherDisplay extends State<WeatherDisplay> {
           ),
 
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.all(10),
           child: SizedBox(
             width: 150,
             child: TextField(
