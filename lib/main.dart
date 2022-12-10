@@ -3,21 +3,7 @@ import 'package:assignment4/weather_display.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:weather_icons/weather_icons.dart';
-
 import 'greeting.dart';
-
-/*IconButton(
-iconSize: 50,
-color: Colors.blue,
-onPressed: () {
-ScaffoldMessenger.of(context).showSnackBar(
-SnackBar(content: Text('Icon button is pressed')));
-},
-icon: Icon(
-Icons.ads_click,
-),
-)*/
 
 void main() {
   setPathUrlStrategy();
@@ -69,7 +55,7 @@ class App extends StatelessWidget {
   );
 }
 
-/// The screen of the first page.
+/// Initial or home screen of the application.
 class InitialScreen extends StatelessWidget {
   /// Creates a [InitialScreen].
   const InitialScreen({Key? key}) : super(key: key);
@@ -147,6 +133,7 @@ class InitialScreen extends StatelessWidget {
   );
 }
 
+// Error message tto show when widget is failed to load
 class ErrorScreen extends StatelessWidget {
   final Exception? error;
   const ErrorScreen( {Key? key, required this.error}) : super(key: key);

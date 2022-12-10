@@ -1,19 +1,5 @@
-/*
-{
-  "weather": [
-    {
-      "description": "clear sky",
-      "icon": "01d"
-    }
-  ],
-  "main": {
-    "temp": 282.55,
-  },
 
-  "name": "Mountain View",
-}
- */
-
+// Weather information model
 class WeatherInfo {
   final String description;
   final String icon;
@@ -27,6 +13,7 @@ class WeatherInfo {
   }
 }
 
+// Temperature model
 class TemperatureInfo {
   final double temperature;
   final double feelsLikeTemp;
@@ -40,6 +27,7 @@ class TemperatureInfo {
   }
 }
 
+// Response model
 class WeatherResponse {
   final String cityName;
   final TemperatureInfo tempInfo;
